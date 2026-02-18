@@ -1,13 +1,9 @@
 const BASE_URL = `https://api.adviceslip.com/advice`;
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log("DOM fully loaded and parsed");
-  getAdvice();
-});
-
 const slipId = document.querySelector('div.id');
 const advice = document.querySelector('div.advice');
 const button = document.querySelector('button.getAdvice');
+
 button?.addEventListener('click', getAdvice);
 
 async function getAdvice() {
@@ -39,6 +35,4 @@ async function getAdvice() {
   }
 }
 
-// getAdvice();
-
-// button?.addEventListener('click', getAdvice);
+getAdvice();

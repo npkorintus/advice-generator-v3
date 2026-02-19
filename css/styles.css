@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+:root {
+  font-family: 'Manrope';
+
+  /* Color variables */
+  --blue-200: hsl(193, 38%, 86%);
+  --blue-600: hsl(217, 19%, 38%);
+  --blue-900: hsl(217, 19%, 24%);
+  --blue-950: hsl(218, 23%, 16%);
+  --green-300: hsl(150, 100%, 66%);
+}
 
 html,
 body {
@@ -13,11 +22,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: hsl(218, 23%, 16%);
-}
-
-:root {
-  font-family: 'Manrope';
+  background: var(--blue-950);
 }
 
 a {
@@ -37,20 +42,6 @@ a:hover {
   text-align: center;
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
-  position: fixed;
-  left: 0;
-  bottom: 16px;
-  width: 100%;
-  color: white;
-}
-
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-
 .loading {
   color: #ffffff;
   display: block;
@@ -59,28 +50,21 @@ a:hover {
 .advice-card {
   padding: 20px;
   border-radius: 12px;
-  background: hsl(217, 19%, 24%);
+  background: var(--blue-900);
   display: none;
 }
 
 .id {
-  color: hsl(150, 100%, 66%);
+  color: var(--green-300);
   text-transform: uppercase;
   letter-spacing: 4px;
 }
 
 .advice {
-  color: hsl(193, 38%, 86%);
+  color: var(--blue-200);
   font-weight: 800;
   font-size: 28px;
   margin-top: 32px;
-
-  /* ::before, ::after {
-    content: '"';
-    font-size: 40px;
-    vertical-align: top;
-    margin-right: 8px;
-  } */
 }
 
 .advice::before {
@@ -106,13 +90,18 @@ button.getAdvice {
   border-radius: 50%;
   height: 60px;
   width: 60px;
-  background-color: hsl(150, 100%, 66%);
+  background-color: var(--green-300);
   display: inline-block;
   cursor: pointer;
 
   @media (hover:hover) {
     &:hover {
-      box-shadow: 0 0 40px hsl(150, 100%, 66%);
+      box-shadow: 
+        0 0 30px var(--green-300),
+        0 0 30px var(--blue-600);
+        /* box-shadow: 
+        0 0 40px var(--blue-600),
+        0 0 40px var(--green-300); */
       animation: fadeIn 0.25s;
     }
   }
@@ -124,6 +113,25 @@ button.getAdvice {
   }
 
   100% {
-    box-shadow: 0 0 40px hsl(150, 100%, 66%);
+    box-shadow: 
+      0 0 30px var(--green-300),
+      0 0 30px var(--blue-600);
+      /* box-shadow: 
+      0 0 40px var(--blue-600),
+      0 0 40px var(--green-300); */
   }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 16px;
+  width: 100%;
+  color: white;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
